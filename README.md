@@ -41,9 +41,9 @@ erDiagram
         string address
         books books
     }
-    bookType ||--o{ reviewType : contains
-    author ||--o{ bookType : contains
-    publisher ||--o{ bookType : contains
+    bookType ||--o{ reviewType : reviews
+    author ||--o{ bookType : books
+    publisher ||--o{ bookType : books
 
 
 ```
