@@ -48,10 +48,10 @@ def generate_mermaid_erdiagram(entities, relationships):
     return er_diagram
 
 
-xsd_path = 'books.xsd' 
+# convert this XSD
+xsd_path = 'books.xsd'
 entities, relationships = parse_xsd(xsd_path)
 mermaid_code = generate_mermaid_erdiagram(entities, relationships)
 
+# print the ERD of the XSD
 print(mermaid_code)
-
-            
