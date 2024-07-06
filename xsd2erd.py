@@ -14,8 +14,7 @@ def parse_xsd(xsd_path):
                 attributes.append(f"{subelement_type} {subelement.name}")
                 # Detect potential relationships from nested elements
                 if subelement.type.is_complex():
-                    # relationships.append((stype.name, subelement.name))
-                    relationships.append((stype.name, subelement.type.name))
+                    relationships.append((stype.name, subelement.type.name, subelement.name))
             entities[stype.name] = attributes
 
     for element in schema.elements.values():
@@ -26,8 +25,7 @@ def parse_xsd(xsd_path):
                 attributes.append(f"{subelement_type} {subelement.name}")
                 # Detect potential relationships from nested elements
                 if subelement.type.is_complex():
-                    # relationships.append((element.name, subelement.name))
-                    relationships.append((element.name, subelement.type.name))
+                    relationships.append((element.name, subelement.type.name, subelement.name))
             entities[element.name] = attributes
 
     return entities, relationships
@@ -42,8 +40,8 @@ def generate_mermaid_erdiagram(entities, relationships):
         er_diagram += f"    }}\n"
 
     # Add relationships
-    for (parent, child) in relationships:
-        er_diagram += f"    {parent} ||--o{{ {child} : contains\n"
+    for (parent, child, name) in relationships:
+        er_diagram += f"    {parent} ||--o{{ {child} : {name}\n"
 
     return er_diagram
 
