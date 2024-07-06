@@ -6,8 +6,13 @@ Then manually adjusted.
 
 Reference: https://mermaid.js.org/syntax/entityRelationshipDiagram.html
 
+## Build
+The GitHub Action has a step that generates the erDiagram text.
 
-## Example
+Link: https://github.com/amkuipers/xsd2erd/actions
+
+
+## Example output
 
 ```mermaid
 erDiagram
