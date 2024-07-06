@@ -39,7 +39,7 @@ def generate_mermaid_erdiagram(entities, relationships):
         er_diagram += f"    {entity} {{\n"
         for attribute in attributes:
             er_diagram += f"        {attribute}\n"
-        er_diagram += "    }}\n"
+        er_diagram += f"    }}\n"
 
     # Add relationships
     for (parent, child) in relationships:
