@@ -4,6 +4,7 @@ XSD 2 ERD
 ChatGPT generated code, until I reached a limit and could not improve it.
 Then manually adjusted.
 
+Using mermaid.js to visualise in markdown (without preprocessor).
 Reference: https://mermaid.js.org/syntax/entityRelationshipDiagram.html
 
 ## Build
