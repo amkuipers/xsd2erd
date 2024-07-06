@@ -1,5 +1,6 @@
 import xmlschema
 
+
 def parse_xsd(xsd_path):
     schema = xmlschema.XMLSchema(xsd_path)
     entities = {}
@@ -13,7 +14,7 @@ def parse_xsd(xsd_path):
                 attributes.append(f"{subelement_type} {subelement.name}")
                 # Detect potential relationships from nested elements
                 if subelement.type.is_complex():
-                    #relationships.append((stype.name, subelement.name))
+                    # relationships.append((stype.name, subelement.name))
                     relationships.append((stype.name, subelement.type.name))
             entities[stype.name] = attributes
 
@@ -25,11 +26,12 @@ def parse_xsd(xsd_path):
                 attributes.append(f"{subelement_type} {subelement.name}")
                 # Detect potential relationships from nested elements
                 if subelement.type.is_complex():
-                    #relationships.append((element.name, subelement.name))
+                    # relationships.append((element.name, subelement.name))
                     relationships.append((element.name, subelement.type.name))
             entities[element.name] = attributes
 
     return entities, relationships
+
 
 def generate_mermaid_erdiagram(entities, relationships):
     er_diagram = "erDiagram\n"
@@ -37,13 +39,14 @@ def generate_mermaid_erdiagram(entities, relationships):
         er_diagram += f"    {entity} {{\n"
         for attribute in attributes:
             er_diagram += f"        {attribute}\n"
-        er_diagram += f"    }}\n"
+        er_diagram += "    }}\n"
 
     # Add relationships
     for (parent, child) in relationships:
         er_diagram += f"    {parent} ||--o{{ {child} : contains\n"
 
     return er_diagram
+
 
 xsd_path = 'books.xsd' 
 entities, relationships = parse_xsd(xsd_path)
