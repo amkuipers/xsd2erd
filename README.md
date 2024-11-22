@@ -7,7 +7,7 @@ in producing code.
 
 Input: xsd
 
-Output: mermaid (see github action run output)
+Output: mermaid (see github action build simple run)
 
 Using mermaid.js to visualise in markdown (without preprocessor).
 Reference: https://mermaid.js.org/syntax/entityRelationshipDiagram.html
