@@ -1,8 +1,13 @@
 # xsd2erd
 XSD 2 ERD
 
-ChatGPT generated code, until I reached a limit and could not improve it.
-Then manually adjusted.
+ChatGPT generated python code, until I reached a limit and could not improve it.
+Then manually adjusted. This is also part of checking how ChatGPT performs 
+in producing code.
+
+Input: xsd
+
+Output: mermaid (see github action run output)
 
 Using mermaid.js to visualise in markdown (without preprocessor).
 Reference: https://mermaid.js.org/syntax/entityRelationshipDiagram.html
